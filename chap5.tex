@@ -1,31 +1,31 @@
 \chapter{\label{R_D}Results and Discussions}
-The output separation of the signal and background after the training of the model are given in the \autoref{fig:three graphs}. These separation corresponds to the output with different level of separation. The level of separation are increasing from training in using Tprime[600-700 GeV] to  Tprime[1100-1200 GeV]. The training and testing accuracy can be seen in the \autoref{tab:my_label_table_1}.
+The output separation of the signal and background after the training of the model are given in the \autoref{fig:output_training_models}. These training corresponds to the output with different level of separation. The level of separation are increasing from training in using Tprime[600-700 GeV] to  Tprime[1100-1200 GeV]. The training and testing accuracy can be seen in the \autoref{tab:my_label_table_1}.
 
-\begin{figure}[H]
-     \centering
-     \begin{subfigure}[b]{0.47\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{figure_4/output_TPrime600-700_on_testing_all_background.pdf}
-         \caption{Tprime(600-700GeV)}
-         \label{fig:y equals x}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.47\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{figure_4/output_TPrime800-1000_on_testing_all_background.pdf}
-         \caption{Tprime(800-1000GeV)}
-         \label{fig:three sin x}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.47\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{figure_4/Training_with_Tprime_1100-1200GeV_ with_backgrounds.pdf}
-         \caption{Tprime(1100-1200GeV)}
-         \label{fig:five over x}
-     \end{subfigure}
-        \caption{Separation output of signal from the background after all different training }
-        \label{fig:three graphs}
-\end{figure}
+% \begin{figure}[H]
+%      \centering
+%      \begin{subfigure}[b]{0.47\textwidth}
+%          \centering
+%          \includegraphics[width=\textwidth]{figure_4/output_TPrime600-700_on_testing_all_background.pdf}
+%          \caption{Tprime(600-700GeV)}
+%          \label{fig:y equals x}
+%      \end{subfigure}
+%      \hfill
+%      \begin{subfigure}[b]{0.47\textwidth}
+%          \centering
+%          \includegraphics[width=\textwidth]{figure_4/output_TPrime800-1000_on_testing_all_background.pdf}
+%          \caption{Tprime(800-1000GeV)}
+%          \label{fig:three sin x}
+%      \end{subfigure}
+%      \hfill
+%      \begin{subfigure}[b]{0.47\textwidth}
+%          \centering
+%          \includegraphics[width=\textwidth]{figure_4/Training_with_Tprime_1100-1200GeV_ with_backgrounds.pdf}
+%          \caption{Tprime(1100-1200GeV)}
+%          \label{fig:five over x}
+%      \end{subfigure}
+%         \caption{Separation output of signal from the background after all different training }
+%   \label{fig:three graphs_11233}
+% \end{figure}
 
 
 
@@ -52,7 +52,7 @@ The output separation of the signal and background after the training of the mod
 
 
 
-The Receiving operator characteristic(ROC) curve for the different training from Tprime[600-700], Tprime[800-1000], and Tprime[1100-1200] can be compared with the \autoref{fig:my_label_ROC}. The ROC curve suggest the correlation between the signal and background efficiencies. This helps for the background rejections. 
+The DNN model can be validated with the output receiving operator characteristic(ROC) curve for the different training from Tprime[600-700], Tprime[800-1000], and Tprime[1100-1200] can be compared with the \autoref{fig:my_label_ROC}. The ROC curve suggest the correlation between the signal and background efficiencies. This helps for the background rejections. For different training with increasing mass points of $T'$ have decreasing correlations. 
 \begin{figure}[H]
     \centering
     \includegraphics{Results_outputs/ROC_curve_Comaprision_Different_training.pdf}
@@ -61,13 +61,13 @@ The Receiving operator characteristic(ROC) curve for the different training from
 \end{figure}
 
 
-The output after testing on the DNN score from the different training are represented as in the form of stacked ratio plot as in \autoref{fig:stacked_plot_DNN_100}. All the output are from different training output after testing on standard model Higgs (SMH) backgrounds, Non-resonant backgrounds (NRBs) and on the signals corresponding to the training. The output plotted with applying the diphoton cut on  the monte carlo(MC) of the NRB and SMH, along with the datafile. The monte carlo have been scaled with the datafile as $\frac{Datafile}{MonteCarlo}$, which have been plotted as the ratio plot below the stacked histogram.\\
+The output after testing of simulated samples on the DNN score from the different training are represented as in the form of stacked ratio plot as in \autoref{fig:stacked_plots_1}. All the output  after testing on standard model Higgs (SMH) backgrounds, Non-resonant backgrounds (NRBs) and on the signals corresponding to the training. The output plotted with applying the diphoton cut on  the monte carlo(MC) of the NRB and SMH, along with the datafile. The monte carlo have been scaled with the datafile as $\frac{Datafile}{MonteCarlo}$, which have been plotted as the ratio plot below the stacked histogram.\\
 
 \begin{figure}[H]
      \centering
      \begin{subfigure}[b]{0.3\textwidth}
          \centering
-         \includegraphics[width=\textwidth, scale = 0.5 ]{figure_4/Stacked_plot_DNN_600-700_with_diphoton_cuts.pdf}
+         \includegraphics[width=\textwidth, scale = 0.5]{figure_4/Stacked_plot_DNN_600-700_with_diphoton_cuts.pdf}
         %  \caption{$y=x$}
         %  \label{fig:y equals x}
      \end{subfigure}
@@ -85,11 +85,11 @@ The output after testing on the DNN score from the different training are repres
         %  \caption{$y=3sinx$}
         %  \label{fig:three sin x}
      \end{subfigure}
-    \label{fig:stacked_plot_DNN_100}
-    \caption{The stacked ratio plot corresponding to the output after testing of different backgrounds, and signal over the DNN score.}
+        \caption{The stacked ratio plot corresponding to the output after testing of different backgrounds, and signal over the DNN score.}
+        \label{fig:stacked_plots_1}
 \end{figure}
 
-With the help of linear fit $Y = mx+c$, the ratio plot of the data and the Monte Carlo were fitted and corresponding output of the slope and intercept, as given in \autoref{tab:my_label_DNN_1} were used to scale the values and again the stacked ratio plot were plotted as shown in the \autoref{fig:stacked_scaled_plot_DNN_200}. 
+With the help of linear fit $Y = mx+c$, the ratio plot of the data and the Monte Carlo were fitted and corresponding output of the slope and intercept, as given in \autoref{tab:my_label_DNN_1} were used to scale the values and again the stacked ratio plot were plotted as shown in the \autoref{fig:stacked_scaled_plots_DNN_200} for mismatch between the data and Monte Carlo. 
 
 
 \begin{table}[H]
@@ -143,13 +143,15 @@ With the help of linear fit $Y = mx+c$, the ratio plot of the data and the Monte
         %  \caption{$y=3sinx$}
          \label{fig:three sin x}
      \end{subfigure}
-     \label{fig:stacked_scaled_plot_DNN_200}
-     \caption{The stacked ratio plot corresponding to the output after testing of different backgrounds, and signal over the DNN score after linear fitting the ratio plot and scaled the input. Here, the data are matching with the monte carlo.}
+          \caption{The stacked ratio plot corresponding to the output after testing of different backgrounds, and signal over the DNN score after linear fitting the ratio plot and scaled the input. Here, the data are matching with the monte carlo.}
+          \label{fig:stacked_scaled_plots_DNN_200}
 \end{figure}
 
 
 
-As in the DNN the process, after testing on the DNN score the coutput were plotted as the stacked ratio plot, the corresponding plot to the training with Boosted Decision Tree(BDT) can be seen in the \autoref{fig:BDT_output_11}. 
+As in the DNN the process, after testing on the DNN score the coutput were plotted as the stacked 
+ratio plot, the corresponding plot to the training with Boosted Decision Tree(BDT) can be seen in the
+\autoref{fig:plots}. 
 
 
 \begin{figure}[H]
@@ -175,17 +177,14 @@ As in the DNN the process, after testing on the DNN score the coutput were plott
         %  \caption{$y=3sinx$}
          \label{fig:three sin x}
      \end{subfigure}
-     \label{fig:BDT_output_11}
-     \caption{The stacked ratio plot corresponding to the output after testing of different backgrounds, and signal over the DNN score.}
+        \caption{The stacked ratio plot corresponding to the output after testing of different backgrounds, and signal over the DNN score.}
+        \label{fig:plots}
 \end{figure}
 
 
-The Stacked ration plot of BDT output after linear fit and scaling with the corresponding parameters is in \autoref{fig:BDT_ouput_Fitted}.
+The Stacked ration plot of BDT output after linear fit and scaling with the corresponding parameters is in \autoref{fig:BDT_ouput_Fitted_with}.
 
-
-
-% \section{Di-photon cuts with scaled inputs(BDT)}
-\begin{figure}[H]
+\begin{figure}
      \centering
      \begin{subfigure}[b]{0.3\textwidth}
          \centering
@@ -197,21 +196,19 @@ The Stacked ration plot of BDT output after linear fit and scaling with the corr
      \begin{subfigure}[b]{0.3\textwidth}
          \centering
          \includegraphics[width=\textwidth]{BDT_Output/Stacked_plot_BDT_800-1000_with_diphoton_cuts_with_Scaled_inputs.pdf}
-        %  \caption{$y=3sin/x$}
-         \label{fig:three sin x}
-     \end{subfigure}
-    \hfill
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{BDT_Output/Stacked_plot_BDT_1100-1200_with_diphoton_cuts_with_scaled_inputs.pdf}
         %  \caption{$y=3sinx$}
          \label{fig:three sin x}
      \end{subfigure}
-     \label{fig:BDT_ouput_Fitted}
-     \caption{The stacked ratio plot corresponding to the output after testing of different backgrounds, and signal over the BDT score after linear fitting the ratio plot and scaled the input. Here, the data are matching with the monte carlo .}
+     \hfill
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{BDT_Output/Stacked_plot_BDT_1100-1200_with_diphoton_cuts_with_scaled_inputs.pdf}
+        %  \caption{$y=5/x$}
+         \label{fig:five over x}
+     \end{subfigure}
+        \caption{The stacked ratio plot corresponding to the output after testing of different backgrounds, and signal over the BDT score after linear fitting the ratio plot and scaled the input. Here, the data are matching with the monte carlo .}
+        \label{fig:BDT_ouput_Fitted_with}
 \end{figure}
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
@@ -221,7 +218,7 @@ The Stacked ration plot of BDT output after linear fit and scaling with the corr
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 
 
-\section{BDT and DNN Comparisons}
+\section{BDT and DNN Comparisons}\label{sec:comp}
 The different machine learning techniques comparisons can be seen in the following figures.
 
 \begin{figure}[H]
@@ -333,7 +330,7 @@ The different machine learning techniques comparisons can be seen in the followi
      \end{subfigure}
     \hfill
      \label{fig:}
-     \caption{Comparision for the BDT and DNN output corresponding to the training for Tprime[800-1000GeV] and testing on NRB, SMH, and Tprime at 600GeV, 700GeV, 900GeV, and 1000GeV with the scaled inputs after fitted parameter of slope and intercept as given in \autoref{tab:my_label_DNN_1} and \autoref{tab:my_label_BDT_table}.}
+     \caption{Comparison for the BDT and DNN output corresponding to the training for Tprime[800-1000GeV] and testing on NRB, SMH, and Tprime at 600GeV, 700GeV, 900GeV, and 1000GeV with the scaled inputs after fitted parameter of slope and intercept as given in \autoref{tab:my_label_DNN_1} and \autoref{tab:my_label_BDT_table}.}
 \end{figure}
 
 
@@ -355,7 +352,7 @@ The different machine learning techniques comparisons can be seen in the followi
      \end{subfigure}
     \hfill
      \label{fig:}
-     \caption{Comparision for the BDT and DNN output corresponding to the training for Tprime[1100-1200GeV] and testing on NRB, SMH, and Tprime at 600GeV, 700GeV, 1100GeV, and 1200GeV with the scaled inputs after fitted parameter of slope and intercepts as given in \autoref{tab:my_label_DNN_1} and \autoref{tab:my_label_BDT_table}.}
+     \caption{Comparison for the BDT and DNN output corresponding to the training for Tprime[1100-1200GeV] and testing on NRB, SMH, and Tprime at 600GeV, 700GeV, 1100GeV, and 1200GeV with the scaled inputs after fitted parameter of slope and intercepts as given in \autoref{tab:my_label_DNN_1} and \autoref{tab:my_label_BDT_table}.}
 \end{figure}
 
 
@@ -365,7 +362,7 @@ The different machine learning techniques comparisons can be seen in the followi
 
 
 
- \section{Limit Calculation}
+ \section{Limit Calculation}\label{sec:limit_Ca}
 Before the use of higgs combine tools on the output variable of the DNN and applying cuts these are the number of the events. This is a frequentist hypothesis to calculate the probability of an hypothesis to be inferred from the data based on a large set of hypothetical experiments, such as the Monte Carlo. 
 for the blinded region analysis on 115 < $m_{\gamma\gamma}$ < 135GeV on the monte carlo samples of backgrounds(NRB) have been scaled after the linear fitting of the $\frac{Data}{MC}$ ratio, and scaled to match the data and monte carlo. 
 With the cuts applied as in \autoref{tab:my_label_cuts}, the background have been rejected to get most of the signal processes afer testing over the DNN score. 
@@ -383,7 +380,7 @@ With the cuts applied as in \autoref{tab:my_label_cuts}, the background have bee
     \label{tab:my_label_cuts}
 \end{table}
 
-The inputs sample have been scaled after linear fitting of the ratio plot or applied cuts with following strategy for all the different training of $T{^'}$[600, 700]$\cup$,$T{^'}$[800, 1000]$\cup$, and  $T{^'}$[1100, 1200]. \textbf{Why?}
+The inputs sample have been scaled after linear fitting of the ratio plot or applied cuts with following strategy for all the different training of $T{^'}$[600, 700]$\cup$,$T{^'}$[800, 1000]$\cup$, and  $T{^'}$[1100, 1200]. 
 \begin{table}[H]
     \centering
     \begin{tabular}{c|c}\hline
@@ -473,7 +470,7 @@ The mean(50\%) corresponding to expected limit for two different machine learnin
 
 
 
-The table \autoref{tab:my_label_table_11} containing all the input variables at each entry point for the combined limit calculations for the training Tprime[800-1000]. For the other two training, the output tables representing the number of events going into the combined limit calculation is (add table for Tprime[600-700], and Tprime[1100-1200]).
+The table \autoref{tab:my_label_table_11} containing all the input variables at each mass point for the combined limit calculations for the training Tprime[800-1000]. 
 \begin{table}[h]
     \centering
     \resizebox{\textwidth}{!}{
@@ -502,7 +499,7 @@ The table \autoref{tab:my_label_table_11} containing all the input variables at 
         vh              &   8080        &         &    1174      \\        
         ggh       &    529       &         &      111    \\ \hline
     \end{tabular}}
-    \caption{The number of events correpsonding output at dufferent position in the course of training that is number of events before applying diphoton cut, number of events after applying diphoton cuts and before the limit exclusion plot through datacard prepration for DNN Tprime 800-1000}
+    \caption{The number of events corresponding output at dufferent position in the course of training that is number of events before applying diphoton cut, number of events after applying diphoton cuts and before the limit exclusion plot through datacard preparation for DNN Tprime 800-1000}
     \label{tab:my_label_table_11}
 \end{table}
 
@@ -519,16 +516,16 @@ The table \autoref{tab:my_label_table_11} containing all the input variables at 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-The expected limit are derived using a simultaneous maximum likelihood fit of the $m_{\gamma\gamma}$ distributions in the signal regions defined for the leptonic channels for each of $T^{'}$ mass point ranging from 600 to 1200 GeV. Limits are calculated at 95\% CL with the asymptotic statistical method using the combine tool. The expected limits on signal strength for each $T^’$ mass hypothesis of the DNN in comparison with the BDT, can be seen  from the \autoref{fig:my_label_limit}. 
+The expected limit are derived using a simultaneous maximum likelihood fit of the $m_{\gamma\gamma}$ distributions in the signal regions defined for the leptonic channels for each of $T'$ mass point ranging from 600 to 1200 GeV. Limits are calculated at 95\% CL with the asymptotic statistical method using the combine tool. The expected limits on signal strength for each $T’$ mass hypothesis of the DNN in comparison with the BDT, can be seen  from the \autoref{fig:my_label_limit}. 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.8]{figure_4/muALL_Plot_600-1200_.pdf}
-    \caption{Expected 95\% CL limits for signal strength in the leptonic channel with comparison to the output of the BDT with $M_{T^'}$ $\in$ [600, 1200]GeV.}
+    \includegraphics[scale=0.8]{figure_4/muALL_Plot_600-1200_1.pdf}
+    \caption{Expected 95\% CL limits for signal strength($\mu$) in the leptonic channel with comparison to the output of the BDT with $M_{T'}$ $\in$ [600, 1200]GeV.}
     \label{fig:my_label_limit}
 \end{figure}
 
-The expected limit on the ${T^'}$ production cross-section are evaluated through \autoref{eq:1.1}, which is similar to the \autoref{eq:my_eqn_12}. The combined result together with the BDT comparison can be seen in the \autoref{fig:my_label_Comparision}.
+The expected limit on the ${T'}$ production cross-section are evaluated through \autoref{eq:1.1}, which is similar to the \autoref{eq:my_eqn_12}. The combined result together with the BDT comparison can be seen in the \autoref{fig:my_label_Comparision}.
 \begin{equation} \label{eq:1.1}
     \sigma_{upper\ limit} = \mu_{upper\ limit} \times \sigma_{theory}
 \end{equation}
@@ -537,7 +534,7 @@ The expected limit on the ${T^'}$ production cross-section are evaluated through
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.8]{figure_4/muALL_Plot_600-1200_with_cross_Section_comparision.pdf}
-    \caption{Expected 95\% CL limits for $\sigma \times$ BR(H$\longrightarrow$$\gamma\gamma$)  in the leptonic channel with comaprision to the output of the BDT with $M_{T^'}$ $\in$ [600, 1200]GeV.}
+    \caption{Expected 95\% CL limits for $\sigma \times$ BR(H$\longrightarrow$$\gamma\gamma$)  in the leptonic channel with comparison to the output of the BDT with $M_{T'}$ $\in$ [600, 1200]GeV.}
     \label{fig:my_label_Comparision}
 \end{figure}
 

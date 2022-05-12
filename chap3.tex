@@ -8,9 +8,9 @@
 
 
 
-The analysis done for the events where one vector-like quark, $T’$, is produced and then decays into a top quark and a Higgs boson decaying into two photons. Further, we wish to set upper limits on the cross-section of the vector-like quark $T’$ with $M_{T’}$ in the range of [600, 1200] GeV.
+The analysis done for the events where vector-like quark, $T’$, is produced after $PP$ collision at the CMS, LHC and further decays into a top quark and a Higgs boson, further decaying into two photons. We will be looking into the leptonic channel only. Further, we wish to set upper limits on the cross-section of the vector-like quark $T’$ with $M_{T’}$ in the range of [600, 1200] GeV.
 
-The Higgs invariant mass (or diphoton invariant mass, $m_{\gamma\gamma}$ ) is the main probe of the analysis. The photons and di-photon Higgs candidates are reconstructed using the flashgg framework\cite{CrossSection_6}.
+The Higgs invariant mass (or di-photon invariant mass, $m_{\gamma\gamma}$ ) is the main probe of the analysis. The photons and di-photon Higgs candidates are reconstructed using the flashgg framework\cite{CrossSection_6}.
  Two mass regions are defined accordingly:
 \begin{itemize}
     \item Signal window:  $m_{\gamma\gamma}$ $\in$ [115, 135]GeV
@@ -43,26 +43,26 @@ Here preselections are defined to maintain high efficiency in the signal events.
 
 \item Define a signal region by rectangular cuts on DNN scores. The cuts are determined such that the significance is maximized.
 
-\item Construct parametric signal and background models from the fits to$m_{\gamma\gamma}$ distribution in each defined signal region. 
-\item Non-resonant background are modeled from data in $m_{\gamma\gamma}$  sideband with a variety of functional from. The choice of functional from is treated as a discrete nuisance parameter, following the discrete profiling method. In particular, the fit is performed per year and per channel to capture the year-dependent $m_{\gamma\gamma}$ resolution. In the end, we perform a simultaneous fit of the $m_{\gamma\gamma}$  spectra in the signal regions only for the leptonic channel to extract a limit on the cross-section for each mass point.
+\item Construct parametric signal and background models from the fits to $m_{\gamma\gamma}$ distribution in each defined signal region. 
+\item Non-resonant background are modeled from data in $m_{\gamma\gamma}$  sideband with a variety of functional from. The choice of functional from is treated as a discrete nuisance parameter, following the discrete profiling method. In particular, the fit is performed per mass point and per channel to capture the mass-dependent $m_{\gamma\gamma}$ resolution. In the end, we perform a simultaneous fit of the $m_{\gamma\gamma}$  spectra in the signal regions only for the leptonic channel to extract a limit on the cross-section for each mass point.
 \end{enumerate}
 
 
-When developing the analysis strategy for training classification algorithms, the idea of defining three$M_{T’}$ mass categories is proposed with the following practical considerations:
+When developing the analysis strategy for training classification algorithms, the idea of defining three $M_{T’}$ mass categories is proposed with the following practical considerations:
 \begin{itemize}
     \item Kinematics of signal processes will be similar if $M_{T’}$ masses are not far different.
-    \item Training 10 sets of DNNs would greatly increase the complexity of the analysis and also would increase training time and memory requirement.
+    \item Training 100 sets of DNNs would greatly increase the complexity of the analysis and also would increase training time and memory requirement.
 \end{itemize}
 
 Therefore, three mass ranges are defined such that signal samples are properly grouped for training:
 \begin{itemize}
-    \item $M_T{^’} \in$ [600, 700] GeV
-    \item $M_T{^’} \in$ [800, 1000] GeV
-    \item $M_T{^’}   \in$ [1100, 1200]GeV
+    \item $M_{T'} \in $[600, 700] GeV
+    \item $M_{T'} \in $[800, 1000] GeV
+    \item $M_{T'}   \in$ [1100, 1200]GeV
 \end{itemize}
 
 
-The input features of the training include the kinematic variables of all the final state particles. Since the kinematic features largely depend on $T^'$ mass, using one training for the whole mass range has been found sub-optimal in order to check a potential low $T^'$  mass excess. Therefore three training is performed for different sets of $T^'$  mass points [600, 625, 650, 675, 700], [800, 900, 1000], [1100, 1200]. The following are the list of variables used as the input features in the
+The input features of the training include the kinematic variables of all the final state particles. Since the kinematic features largely depend on $T'$mass, using one training for the whole mass range has been found sub-optimal in order to check a potential low $T'$ mass. Therefore three training is performed for different sets of $T'$ mass points [600, 625, 650, 675, 700], [800, 900, 1000], [1100, 1200]. The following are the list of variables used as the input features in the
 training:
 \begin{itemize}
     \item leading (sub-leading) photon pT/$m_{\gamma\gamma}$
@@ -77,7 +77,7 @@ training:
 \end{itemize}
 
 
-In each mass category, we follow the same analysis procedure presented above to derive final results. Beyond that, it is verified that searches for T’ mass situating between the mass categories (i.e. [700, 800] GeV and [1000, 1100] GeV) are also well described with this strategy.
+In each mass category, we follow the same analysis procedure presented above to derive final results. Beyond that, it is verified that searches for $T'$  mass situating between the mass categories (i.e. [700, 800] GeV and [1000, 1100] GeV) are also well described with this strategy. For each mass categories different DNN model have been trained.
 
 
 
@@ -104,7 +104,7 @@ Deep neural network (DNN) is used here for training the data and further testing
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Model Preparation}
-All the training and testing have been done in the jupyter notebook\cite{Kluyver2016jupyter}, python3 in the interface of lxplus as a CERN grid computing user. For the Ntuple in root to convert into array, it has been processed with the help of \textit{root2numpy}\cite{ml_4}. There the total of 42 input variables in each sample of the signal and the SMH background ( \autoref{tab:my_label_Variable}) were in-focused which were provided to the DNN model. With further help of \textit{pandas Dataframe} \cite{reback2020pandas} the array converted into dataframe. The signal and background were divided into a single array which further before feeding the data into the DNN model. The signal were given the input as like ones and the background were given as the input as like zero. Further with the help of \textit{train\_test\_split}\cite{scikit-learn}, the data has been splitted as 33\% of the total dataset for the testing and rest for the training and validations. The training and testing have been done with three different models that is with Tprime[600-700 GeV], Tprime[800-1000 GeV], and Tprime[1100-1200 GeV], which have been discussed above. To prevent the training from over fitting the early stopping has been used by monitoring validation loss with the patience of 5 times of training. The overfitting decreases the accuracy of the model. There are different training techniques implemented according to the number of data points available\footnote{All the code related to this work can be found here: \url{https://github.com/raj2022/M.Sc.-thesis/tree/main/Codes}}. A generalized model for all the differnet training can be seen in the \autoref{tab:my_label_00}. As we are only doing binary classification as signal and background, we are using \textit{"RELU"} as the activation function between the input layer \& hidden layer, and hidden layer \& hidden layer. The activation function \textit{"Sigmoid"} have been used as output layer for the binary classification. To update the weights between the layer, the binary cross entopy loss function have been used, with \textit{"ADAM"} as the optimizer and giving matrices as the accuracy. The total training data(68\% of the total signal and background) were divide into batches of 9000, which run through the model for 100 times. 
+All the training and testing have been done in the jupyter notebook\cite{Kluyver2016jupyter}, python3 in the interface of lxplus as a CERN grid computing user. For the Ntuple in root to convert into array, it has been processed with the help of \textit{root2numpy}\cite{ml_4}\cite{noel_dawe_2017_842249}. There the total of 42 input variables in each sample of the signal and the SMH background ( \autoref{tab:my_label_Variable}) were in-focused which were provided to the DNN model. With further help of \textit{pandas Dataframe} \cite{reback2020pandas} the array converted into dataframe. The signal and background were divided into a single array which further before feeding the data into the DNN model. The signal were given the input as like ones and the background were given as the input as like zero. Further with the help of \textit{train\_test\_split}\cite{scikit-learn}, the data has been splitted as 33\% of the total dataset for the testing and rest for the training and validations. The training and testing have been done with three different models that is with Tprime[600-700 GeV], Tprime[800-1000 GeV], and Tprime[1100-1200 GeV], which have been discussed above. To prevent the training from over fitting the early stopping has been used by monitoring validation loss with the patience of 5 times of training. The overfitting decreases the accuracy of the model. There are different training techniques implemented according to the number of data points available\footnote{All the code related to this work can be found here: \url{https://github.com/raj2022/M.Sc.-thesis/tree/main/Codes}}. A generalized model for all the differnet training can be seen in the \autoref{tab:my_label_00}. As we are only doing binary classification as signal and background, we are using \textit{"RELU"} as the activation function between the input layer \& hidden layer, and hidden layer \& hidden layer. The activation function \textit{"Sigmoid"} have been used as output layer for the binary classification. To update the weights between the layer, the binary cross entopy loss function have been used, with \textit{"ADAM"} as the optimizer and giving matrices as the accuracy. The total training data(68\% of the total signal and background) were divide into batches of 9000, which run through the model for 100 times. 
 
 \begin{table}[h!]
      \centering
@@ -140,7 +140,7 @@ All the training and testing have been done in the jupyter notebook\cite{Kluyver
 \hspace{3em}
 
 
-\subsubsection{Tprime($T^'$(600-700))}
+\subsubsection{Tprime($T'$(600-700))}
 For the training of this model there were total of 801,385 parameters out of which 796,629 was trainable parameters and 4,756 non-trainable parameters due to dropouts and normalization applied to each layer. The trained score were saved in the form of .h5 file and it was further used for testing on signals, standard model Higgs(SMH) background, and the non-resonant backgrounds(NRB). The testing and training adopted is summarised in \autoref{tab:model600-700}
 \begin{table}[H]
     \centering
@@ -205,9 +205,9 @@ For the training of this model there were total of 801,385 parameters out of whi
     \label{tab:model600-700}
 \end{table}
 
-\subsubsection{Tprime($T^'$(800-1000))}
+\subsubsection{Tprime($T'$(800-1000))}
 
-For the training of this model there were total of 749,609 parameters out of which 746,517was trainable parameters and 3,092 non-trainable parameters due to dropouts and normalization applied to each layer. The trained score were saved in the form of .h5 file and it was further used for testing on signals, standard model Higgs(SMH) background, and the non-resonant backgrounds(NRB). The testing and training adopted can be summarised as in \autoref{tab:model600-700}.
+For the training of this model there were total of 749,609 parameters out of which 746,517 was trainable parameters and 3,092 non-trainable parameters due to dropouts and normalization applied to each layer. The trained score were saved in the form of .h5 file and it was further used for testing on signals, standard model Higgs(SMH) background, and the non-resonant backgrounds(NRB). The testing and training adopted can be summarised as similarly in \autoref{tab:model600-700}.
 
 
 % \begin{table}[H]
@@ -274,8 +274,8 @@ For the training of this model there were total of 749,609 parameters out of whi
 % \end{table}
 
 
-\subsubsection{Tprime($T^'$(1100-1200))}
-For the training of this model there were total of  266,537 parameters out of which 264,469 was trainable parameters and 2,068 non-trainable parameters due to dropouts and normalization applied to each layer. The trained score were saved in the form of .h5 file and it was further used for testing on signals, standard model Higgs(SMH) background, and the non-resonant backgrounds(NRB). The testing and training adopted can be summarised as in \autoref{tab:model600-700}.
+\subsubsection{Tprime($T'$(1100-1200))}
+For the training of this model there were total of  266,537 parameters out of which 264,469 was trainable parameters and 2,068 non-trainable parameters due to dropouts and normalization applied to each layer. The trained score were saved in the form of .h5 file and it was further used for testing on signals, standard model Higgs(SMH) background, and the non-resonant backgrounds(NRB). The testing and training adopted can be summarised as similarly in \autoref{tab:model600-700}.
 
 % \begin{table}[H]
 %     \centering
@@ -368,7 +368,7 @@ The training output from different DNN model can be seen in the \autoref{fig:out
          \caption{Tprime(1100-1200GeV)}
          \label{fig:five over x}
      \end{subfigure}
-        \caption{Separation output of signal from the background after all different training }
+        \caption{Separation output of signal $T{'}$ from the background after all different training in all three mass point of $T{'}$}
         \label{fig:output_training_models}
 \end{figure}
 
@@ -410,13 +410,8 @@ From the \autoref{fig:output_training_models}, the model would giving a clear se
 With applying weights to the input of the root file the stacked ratio plotted. To prevented the data and montecarlo mismatch, the histogram have been re-scaled with \textit{DataYield/ totalMCYield}.
  This confirms the data and monte carlo comparisons as in \autoref{fig:my_label_fig_testing}. If the data and monte carlo have mismatch then either there might be a few depressions in the data or we need to modify the theoretical predictions. 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-
-
-
+On the DNN output from each mass points of T$'$ from [600, 1200], expected limit have been calculated which has been discussed in details in \autoref{sec:limit_Ca}. 
+As discussed above, a similar procedure have been adopted for another machine learning techniques(Boosted decision tree(BDT)) from ongoing analysis(adopted from a publicly available analysis in CMS, CERN) for comparison of the output and check for a better sensitivity. The output after testing on both the model have been plotted in \autoref{sec:comp}.
 
 
 

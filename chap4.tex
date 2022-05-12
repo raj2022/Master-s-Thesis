@@ -7,19 +7,17 @@
 % \end{itemize}
 
 
-Monte Carlo simulations are used to model pp collisions at the LHC. Various processes are generated based on their cross sections, kinematics and the dynamics of interaction. MC samples for both signal and background events were produced by the CMS generator team. 
-The signal process, pp $\longrightarrow$ $T{^’}$bq, is generated at leading order using the Monte Carlo (MC) event generator MADGRAPH5\_AC@NLO 2.3.3 \cite{Alwall2014, Artoisenet2013}for various masses of of $T{^’}$ quark and for the decay $T{^'}\longrightarrow tH$. The decay of Higgs boson(H$\longrightarrow \gamma \gamma$) is simulated using PYTHIA 8.2 \cite{SJOSTRAND2015159}. The $T{^’}$ quark masses used for final results range from 600 to 1200 GeV. The mass of the Higgs boson is set to 125 GeV and the mass of the top quark is set to 172.5 GeV. The NNPDF3.0 parton distribution function is used \cite{Ball_2015} . The signal samples are generated for left-handed chirality of $T{^’}$ quark. The simulated signal samples with their cross section can be seen in the \autoref{tab:my_labeL_Signal} \\
+Monte Carlo simulations are used to model pp collisions at the LHC. Various processes are generated based on their cross-sections, kinematics and the dynamics of the interaction. MC samples for both signal and background events were produced by the CMS generator team. 
+The signal process, pp $\longrightarrow$ $T{’}$bq, is generated at leading order using the Monte Carlo (MC) event generator MADGRAPH5\_AC@NLO 2.3.3 \cite{Alwall2014, Artoisenet2013}for various masses of $T{’}$ quark and for the decay $T'\longrightarrow tH$. The decay of Higgs boson(H$\longrightarrow \gamma \gamma$) is simulated using PYTHIA 8.2 \cite{SJOSTRAND2015159}. The $T{’}$ quark masses used for final results range from 600 to 1200 GeV. The mass of the Higgs boson is set to 125 GeV and the mass of the top quark is set to 172.5 GeV. The NNPDF3.0 parton distribution function is used \cite{Ball_2015} . The signal samples are generated for left-handed chirality of $T{’}$ quark. The simulated signal samples with their cross section can be seen in the \autoref{tab:my_labeL_Signal} \\
 As for background MC samples, various generators are exploited: MADGRAPH5\_AMC@NLO 2.2.2 (MG5\_AMC), PYTHIA 8.2\cite{SJOSTRAND2015159}, SHERPA 2.2 \cite{10.21468/SciPostPhys.7.3.034}. For the 2016 MC production, the PYTHIA tune CUETP8M1 \cite{Khachatryan2016} is used, while for the 2017 and 2018 MC productions, the PYTHIA tune CP5 \cite{Sirunyan2020} is adopted. \\
-Two types of SM background are considered according to their shapes in the di-photon invariant mass spectrum: resonant background (SMH) and non-resonant background (NRB). The former refers to the SM Higgs production processes while the latter refers to other SM processes that have non-negligible contributions to the analysis. The simulated background samples with their cross section can be seen in the \autoref{tab:my_label_BAckground}\\
+Two types of SM background are considered in the analysis according to their shapes in the di-photon invariant mass spectrum: resonant background (SMH) and non-resonant background (NRB). The former refers to the SM Higgs production processes while the latter refers to other SM processes that have non-negligible contributions to the analysis. The simulated background samples with their cross section can be seen in the \autoref{tab:my_label_BAckground}\\
 The major SM Higgs production modes are produced with MG5 a MC@NLO interfaced with PYTHIA 8.2, including gluon fusion \cite{Bagnaschi_2012}, vector boson fusion, production in association with with top quarks \cite{PhysRevD.91.094003}, and with a vector boson. The total cross-sections and branching ratios recommended by the LHC cross-section working group  are used.
-
 
 For the non-resonant background, di-photon samples, in which two prompt photons not forming a peak, are simulated by SHERPA 2.2. QCD multi-jets events (contributing two fake photons) and gamma + jets processes (offering one prompt photon and one fake photons) are simulated by PYTHIA 8.2, with a ”Double EM-enriched” filter applied during production. 
 
 
 After generation, events are propagated through the simulation of the CMS detector using the
-Geant4\cite{AGOSTINELLI2003250} package. The effects of multiple proton-proton interactions are also modeled in the
-package by adding simulated minimum-bias interactions to the simulated samples. The number of pileup interactions agrees with the one observed in data after reweighting the simulated pileup distribution, with the recommended 69.2 mb minimum bias cross-section.
+Geant4\cite{AGOSTINELLI2003250} package. The effects of multiple proton-proton interactions are also modeled in the package by adding simulated minimum-bias interactions to the simulated samples. The number of pileup interactions agrees with the one observed in data after reweighting the simulated pileup distribution, with the recommended 69.2 mb minimum bias cross-section.
 
 
 \begin{table}[H]
@@ -39,7 +37,7 @@ package by adding simulated minimum-bias interactions to the simulated samples. 
   TprimeBToTH\_Hgg\_M-1100\_LH\_TuneCP5\_PSweights\_13TeV-madgraph\_pythia8.root  & 1100  &   0.0224 \\
   TprimeBToTH\_Hgg\_M-1200\_LH\_TuneCP5\_PSweights\_13TeV-madgraph\_pythia8.root   &  1200  & 0.0118	\\ \hline
     \end{tabular}}
-    \caption{List of Monte Carlo signal samples used in the analysis with their cross-section\cite{CrossSection_1}. }
+    \caption{List of Monte Carlo signal samples used in the analysis with their cross-section\cite{CrossSection_1}.} 
     \label{tab:my_labeL_Signal}
 \end{table}
 
@@ -67,7 +65,7 @@ VHToGG\_M125\_13TeV\_amcatnloFXFX\_madspin\_pythia8.root & 5.12\\\hline \hline
     \label{tab:my_label_BAckground}
 \end{table}
 
-\section{ Physics Objects}
+\section{Variable Selections}
 \subsection{Primary Vertex Selection}
 Events to analyze should satisfy the following conditions:
 \begin{itemize}
@@ -94,7 +92,7 @@ Photon identification MVA is an important algorithm used to isolate ("prompt") p
      m_{\gamma_1\gamma_2} = \sqrt{E_{\gamma_1}E_{\gamma_2}(1- \cos{\theta_{\gamma_1\gamma_2}})}
  \end{equation}
  
- For each photon, photon ID MVA score is required to be larger than − 0.7, which eliminates
+ For each photon, photon ID MVA score is required to be larger than −0.7, which eliminates
 reducible background events without loosing much VLQ signal events in the H$\longrightarrow \gamma\gamma$ channel.
 If there are more than one di-photon candidate surviving all the event selections in an event, the candidate with the largest scalar sum of two photons $p_T$ is chosen as the Higgs candidate of the event.
 
@@ -110,8 +108,7 @@ The signal window is blinded throughout the development of the analysis.
 We follow the standard recommendations from JetMET physics object group for treatments of jets. Reconstruction of jets is based on anti-kT clustering algorithm \cite{Cacciari_2008} with a distance parameter being 0.4 (AK4). The jets originate from particle flow candidates with charged hadron coming from non-primary vertices subtracted (PFchs). The jet energy corrections and energy smearing are applied according to the recipes provided by the JERC group\cite{CrossSection_5}.
 
 \subsection{b-tagged jets}
-Jets originating from the hadronization of b-quarks are tagged using the DeepCSV algorithm. The loose working point of the DeepCSV algorithm is used to identify b jets. Addition-
-ally, the b jets are required to be in the barrel region ( | $\eta$ | < 2.5). 
+Jets originating from the hadronization of b-quarks are tagged using the DeepCSV algorithm. The loose working point of the DeepCSV algorithm is used to identify b jets. Additionally, the b jets are required to be in the barrel region ( |$\eta$| < 2.5). 
 
 
 \subsection{Missing ET}
@@ -180,14 +177,9 @@ The different variable used in this analysis are listed in \autoref{tab:my_label
 
 
 
-Even when intriguing particles are created, finding them is a difficult task. They are too tiny to be seen directly and disintegrate into other particles nearly instantly. Although new particles cannot be seen directly, the lighter stable particles to which they decay, known as decay products, can. For this reason, multiple layers of detectors surround the moment of impact. Each decay product interacts with these detectors in a way that permits the direction and momentum of the decay product to be detected. \\
-Electrically charged leptons (electrons or muons, designated) and particle jets are visible decay products (collimated streams of particles originating from quarks or gluons, denoted j).
+Even when intriguing particles are created, finding them is a difficult task. They have very small cross-section compared to the other particles. Although new particles cannot be seen directly, the lighter stable particles to which they decay, known as decay products, can be seen in the detector. For this reason, multiple layers of detectors surround the moment of impact. Each decay product interacts with these detectors in a way that permits the direction and momentum of the decay product to be detected. The signal $T{'}$ have the final product of bottom quark(q), leptons(electon and electron neutrino), and diphoton($\gamma\gamma$). The backgrounds Standard Model Higgs(SMH) and Non-Resonant background (NRB) have similar final state topology.
 
-
-The synthesis of top quarks in pairs ($\Bar{t}tH$)  or singly (tH) with the Higgs boson allows direct experimental access to the top-Higgs interaction with an output signature comparable to that of  $\Bar{t}tH (tH)$ decay. The ttH (tH) production mode has a highly distinctive experimental signature, which includes leptons and/or jets from the decay of the two (single) top quarks, as seen in \autoref{fig:my_label_tth}, while proceeding at a rate roughly 100(1000) times slower than gluon fusion.\\
-
-
-
+Electrically charged leptons (electrons or muons, designated) and particle jets are visible decay products (collimated streams of particles originating from quarks or gluons, denoted j).The synthesis of top quarks in pairs ($\Bar{t}tH$)  or singly (tH) with the Higgs boson allows direct experimental access to the top-Higgs interaction with an output signature comparable to that of  $\Bar{t}tH (tH)$ decay. The ttH (tH) production mode has a highly distinctive experimental signature, which includes leptons and/or jets from the decay of the two (single) top quarks, as seen in \autoref{fig:my_label_tth}, while proceeding at a rate roughly 100(1000) times slower than gluon fusion.\\
 The ttH production cross section is predicted to grow by a factor of four as the LHC energy is increased from 8 to 13 TeV for Run 2. However, such a mechanism is still uncommon, and searches for ttH creation have been fueled by the increased sensitivity achieved in Higgs decay modes with higher branching fractions. \\
 \begin{figure}[H]
     \centering
@@ -195,9 +187,7 @@ The ttH production cross section is predicted to grow by a factor of four as the
     \caption{Feynman diagrams depicting $t\Bar{t}H$ production modes}
     \label{fig:my_label_tth}
 \end{figure}
-The T$^'$ quark could couple to bW, tZ, or tH, resulting in the corresponding T$^'$ quark decays as shown with Feynman diagram in the \autoref{fig:my_label_T'}. All the other few backgrounds with similar decay signature used as the backgrounds are shown in \autoref{fig:my_label_ttgg}, \autoref{fig:my_label_thq}, and \autoref{fig:my_label_ttgg_12}.\\
-
-
+The T$^'$ quark could couple to bW, tZ, or tH, resulting in the corresponding T$'$ quark decays as shown with Feynman diagram in the \autoref{fig:my_label_T'}. All the other few backgrounds with similar decay signature used as the backgrounds are shown in \autoref{fig:my_label_ttgg}, \autoref{fig:my_label_thq}, and \autoref{fig:my_label_ttgg_12}.\\
 
 
 \begin{figure}[H]
@@ -210,14 +200,14 @@ The T$^'$ quark could couple to bW, tZ, or tH, resulting in the corresponding T$
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{figure_1/ttgg.png}
+    \includegraphics[scale=0.7]{figure_1/ttgg.png}
     \caption{ttgg Feynman diagram}
     \label{fig:my_label_ttgg}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{figure_1/ttgg__.png}
+    \includegraphics[scale=1]{figure_1/ttgg__.pdf}
     \caption{Feynman diagram for ttgg}
     \label{fig:my_label_ttgg_12}
 \end{figure}
@@ -225,7 +215,7 @@ The T$^'$ quark could couple to bW, tZ, or tH, resulting in the corresponding T$
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale =0.5]{figure_1/thq.png}
+    \includegraphics[scale =1]{figure_1/thq.png}
     \caption{Feynman diagram of thq}
     \label{fig:my_label_thq}
 \end{figure}
@@ -233,7 +223,7 @@ The T$^'$ quark could couple to bW, tZ, or tH, resulting in the corresponding T$
 
 
 
-Few of the plots of variables of these simulated samples are shown in \autoref{fig:Signal_bkg_plotting} with the high level input features on the right side of \autoref{fig:Signal_bkg_plotting} and low level input features on the left of \autoref{fig:Signal_bkg_plotting}.
+Few of the plots of variables of these simulated samples are shown in  \autoref{fig:Signal_bkg_plotting} showing the high level input features on the right side of \autoref{fig:Signal_bkg_plotting} and low level input features on the left of \autoref{fig:Signal_bkg_plotting}.
 \begin{figure}[H]
 \begin{subfigure}{.5\textwidth}
   \centering
@@ -255,7 +245,7 @@ Few of the plots of variables of these simulated samples are shown in \autoref{f
 \begin{subfigure}{.5\textwidth}
   \centering
   % include third image
-  \includegraphics[width=.8\linewidth]{Figure_2/dipho_leadIDMVA.pdf}  
+  \includegraphics[width=.8\linewidth]{Figure_2/jet2_pt.pdf}  
   \caption{}
   \label{fig:sub-third}
 \end{subfigure}
@@ -297,14 +287,14 @@ Few of the plots of variables of these simulated samples are shown in \autoref{f
 %   \caption{}
   \label{fig:sub-fourth}
 \end{subfigure}
-\caption{Simulated sample plot for different variables, for each figure plotted above the signal is Tprime and the standard model higgs as the background. From top to bottom, plots for different variable are as, (a) Plot for $dipho\_leadEta$, (b) Plot for $bjet1\_eta$, (c)Plot for $dipho\_leadIDMVA$, (d) Plot for $dipho\_leadPt$, (e) Plot for $dipho\_subleadEta$, (f) Plot for $jet2\_eta$, (g) Plot for $lepton\_leadEta$, and (h) Plot for n\_jets  }
+\caption{Simulated sample plot for different variables, for each figure plotted above the signal is Tprime and the standard model higgs as the background. From top to bottom, plots for different variable are as, (a) Plot for dipho\_leadEta, (b) Plot for bjet1\_eta, (c)Plot for jet2\_Pt, (d) Plot for dipho\_leadPt, (e) Plot for dipho\_subleadEta, (f) Plot for jet2\_eta, (g) Plot for lepton\_leadEta, and (h) Plot for n\_jets  }
 \label{fig:Signal_bkg_plotting}
 \end{figure}
  
 In the given \autoref{fig:Signal_bkg_plotting}, even from the best separation among the input variable of the Tprime(signal) and SMH(background) model of the monte carlo smaples, we cannot see how our signal (Tprime) get clearly separated from the standard model higgs(SMH) backgrounds. 
 For the better separation between these two, we need the application of machine learning techniques(DNN), which discussed in details with outputs in \autoref{AN}, \autoref{R_D}.
-For the testing for the presence of any signals in the \textit{RUN II} datafile,  the DNN training model have been tested on \textit{"allData\_RunII.root"}, which collected by CMS during 2016, 2017, 2018 run of the LHC, with an integrated
-luminosity of 137.65$fb^{-1}$ , is used for this analysis..
+For the testing for the presence of any signals in the \textit{RUN II} datafile,  the DNN training model have been tested on \textit{"allData\_RunII.root"}, which collected by CMS data acquisition team during 2016, 2017, 2018 run of the LHC, with an integrated
+luminosity of 137.65$fb^{-1}$ , is used for this analysis.
 
 
 

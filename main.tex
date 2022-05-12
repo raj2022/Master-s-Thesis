@@ -16,6 +16,14 @@
 \usepackage{mathptmx}
 \usepackage[linguistics]{forest}
 \usepackage{mathptmx}
+\usepackage{afterpage}
+
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+
 \usepackage[colorlinks]{hyperref}
 \usepackage{epigraph}
 \usepackage{algpseudocode}
@@ -25,6 +33,7 @@
 \usepackage{subcaption}
 \usepackage{enumitem}
 % \usepackage{subfig}
+\usepackage{url}
 % \usepackage{feynman}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -59,7 +68,7 @@
 
 % \addto{\captionsenglish}{\renewcommand{\bibname}{References}}
 
-
+\usepackage{notoccite}   %#To order all the citation on order it is in bibtex
 
 
 \usepackage{titlesec}
@@ -114,6 +123,7 @@
 \clearpage
 \include{chap1.2}
 \clearpage
+\afterpage{\blankpage}
 \include{chap2}
 \clearpage
 \include{chap4}
